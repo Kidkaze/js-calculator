@@ -1,25 +1,25 @@
 // Create Add function
-function add(a, b) {
-        return a + b;
-}
+const add = function(a, b) {
+        return parseInt(a + b);
+};
 
 // Create subtract function
-function subtract(a, b) {
-    return a - b;
-}
+const subtract = function(a, b) {
+    return parseInt(a - b);
+};
 
 // Create multiplication function 
-function multiply(a, b) {
-    return a * b;
-}
+const multiply = function(a, b) {
+    return parseInt(a * b);
+};
 
 // create division function 
-function divide(a, b) {
-    return a / b;
-}
+const divide = function(a, b) {
+    return parseInt(a / b);
+};
 
 // Operate function 
-function operate(add, subtract, multiply, divide) {
+const operate = function(add, subtract, multiply, divide) {
     if(add) {
         return add(a, b);
     } else if(subtract) {
@@ -29,4 +29,18 @@ function operate(add, subtract, multiply, divide) {
     } else if(divide) {
         return divide(a, b);
     }
-}
+};
+
+let calculator = {
+    'screen': 0,
+    'firstValue': null,
+    'operator': null,
+    'secondValue': null,
+};
+
+const screenDisplay = function() {
+    const display = document.querySelector('.display');
+    display.value = calculator.screen;
+};
+
+screenDisplay();

@@ -1,21 +1,21 @@
 // Create Add function
 const add = function(a, b) {
-        return parseInt(a + b);
+        return (a + b);
 };
 
 // Create subtract function
 const subtract = function(a, b) {
-    return parseInt(a - b);
+    return (a - b);
 };
 
 // Create multiplication function 
 const multiply = function(a, b) {
-    return parseInt(a * b);
+    return (a * b);
 };
 
 // create division function 
 const divide = function(a, b) {
-    return parseInt(a / b);
+    return (a / b);
 };
 
 // Operate function 
@@ -34,9 +34,9 @@ const operate = function(add, subtract, multiply, divide) {
 let calculator = {
     'screen': 0,
     'firstValue': null,
-    'operator': null,
+    'operatorSelected': null,
     'secondValue': null,
-};
+}
 
 const screenDisplay = function() {
     const display = document.querySelector('.display');
@@ -44,3 +44,11 @@ const screenDisplay = function() {
 };
 
 screenDisplay();
+
+const keyPress = document.querySelector('.keys');
+keyPress.addEventListener('click', (event) => {
+    const {target} = event;
+    if(target.matches('button')){
+        console.log('button', target.dataset);
+    } 
+});

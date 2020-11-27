@@ -31,7 +31,7 @@ const operate = function(add, subtract, multiply, divide) {
     }
 };
 
-let calculator = {
+const  calculator = {
     'screen': 0,
     'firstValue': null,
     'operatorSelected': null,
@@ -41,14 +41,15 @@ let calculator = {
 const screenDisplay = function() {
     const display = document.querySelector('.display');
     display.value = calculator.screen;
+    const keyPress = document.querySelector('.keys');
+keyPress.addEventListener('click', (e) => {
+    const {target} = e;
+    if(target.matches('button')){
+        display.value = (target.dataset.key);
+    } 
+});
 };
 
 screenDisplay();
 
-const keyPress = document.querySelector('.keys');
-keyPress.addEventListener('click', (event) => {
-    const {target} = event;
-    if(target.matches('button')){
-        console.log('button', target.dataset);
-    } 
-});
+

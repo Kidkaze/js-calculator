@@ -18,19 +18,7 @@ const divide = function(a, b) {
     return (a / b);
 };
 
-// Operate function 
-const operate = function(add, subtract, multiply, divide) {
-    if(add) {
-        return add(a, b);
-    } else if(subtract) {
-        return subtract(a, b);
-    } else if(multiply) {
-        return multiply(a, b);
-    } else if(divide) {
-        return divide(a, b);
-    }
-};
-
+// Screen logic for the data keys
 const  calculator = {
     'screen': 0,
     'firstValue': null,
@@ -38,18 +26,32 @@ const  calculator = {
     'secondValue': null,
 }
 
-const screenDisplay = function() {
-    const display = document.querySelector('.display');
+// Display value being clicked
+const display = document.querySelector('.display');
     display.value = calculator.screen;
+
+const screenDisplay = function() {
     const keyPress = document.querySelector('.keys');
-keyPress.addEventListener('click', (e) => {
-    const {target} = e;
-    if(target.matches('button')){
-        display.value = (target.dataset.key);
-    } 
-});
+        keyPress.addEventListener('click', (e) => {
+            const {target} = e;
+                if(target.matches('[data-key]')){
+                    display.value = (target.dataset.key);
+                } 
+        });
 };
 
 screenDisplay();
 
+// Reset the screen back to 0
+const clear = function() {
+    const ac = document.querySelector('#clear');
+        ac.addEventListener('click', (e) => {
+            const {target} = e;
+                if(target.matches('#clear')) {
+                    display.value = 0;
+                }
+        });
+};
+
+clear();
 

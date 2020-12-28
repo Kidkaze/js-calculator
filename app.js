@@ -26,10 +26,10 @@ const  calculator = {
     'secondValue': null,
 }
 
-// Display value being clicked
 const display = document.querySelector('.display');
     display.value = calculator.screen;
 
+// Display value being clicked
 const screenDisplay = function() {
     const keyPress = document.querySelector('.keys');
         keyPress.addEventListener('click', (e) => {
@@ -54,4 +54,17 @@ const clear = function() {
 };
 
 clear();
+
+// Have multiple numbers on the screen
+const appendNum = function() {
+    
+}
+
+const chooseOperation = function() {
+
+}
+
+const updateOperation = function() { 
+
+}
 

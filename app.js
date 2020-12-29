@@ -25,12 +25,26 @@ const operators = document.querySelectorAll('.operator');
 const decimal = document.querySelector('#decimal')
 const ac = document.querySelector('#clear');
 let displayValue = 0;
-let firstVal = '';
-let secondVal = '';
+let firstVal;
+let secondVal;
 let operator;
 
 // Default Display Value
 display.value = displayValue;
+
+// Populate display screen with first number
+const firstNum = function() {
+    numbers.forEach(number => {
+        number.addEventListener('click', (e) => {
+            const {target} = e;
+                if(target.matches('.number')) {
+                    display.value = e.target.innerText;
+                }
+        });
+    });
+};
+
+firstNum();
 
 // Reset the screen back to 0
 const clearAll = function() {
@@ -38,14 +52,9 @@ const clearAll = function() {
         ac.addEventListener('click', (e) => {
             const {target} = e;
                 if(target.matches('#clear')) {
-                    return displayValue;
+                    display.value = displayValue;
                 }
         });
 };
 
 clearAll();
-
-// Populate display screen
-const populateScreen = function() {
-    number
-}

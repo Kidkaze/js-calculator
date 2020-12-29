@@ -18,53 +18,34 @@ const divide = function(a, b) {
     return (a / b);
 };
 
-// Screen logic for the data keys
-const  calculator = {
-    'screen': 0,
-    'firstValue': null,
-    'operatorSelected': null,
-    'secondValue': null,
-}
-
+// Selectors 
 const display = document.querySelector('.display');
-    display.value = calculator.screen;
+const numbers = document.querySelectorAll('.number');
+const operators = document.querySelectorAll('.operator');
+const decimal = document.querySelector('#decimal')
+const ac = document.querySelector('#clear');
+let displayValue = 0;
+let firstVal = '';
+let secondVal = '';
+let operator;
 
-// Display value being clicked
-const screenDisplay = function() {
-    const keyPress = document.querySelector('.keys');
-        keyPress.addEventListener('click', (e) => {
-            const {target} = e;
-                if(target.matches('[data-key]')){
-                    display.value = (target.dataset.key);
-                } 
-        });
-};
-
-screenDisplay();
+// Default Display Value
+display.value = displayValue;
 
 // Reset the screen back to 0
-const clear = function() {
+const clearAll = function() {
     const ac = document.querySelector('#clear');
         ac.addEventListener('click', (e) => {
             const {target} = e;
                 if(target.matches('#clear')) {
-                    display.value = 0;
+                    return displayValue;
                 }
         });
 };
 
-clear();
+clearAll();
 
-// Have multiple numbers on the screen
-const appendNum = function() {
-    
+// Populate display screen
+const populateScreen = function() {
+    number
 }
-
-const chooseOperation = function() {
-
-}
-
-const updateOperation = function() { 
-
-}
-
